@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Management Tool</h1>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="upload-box">
+                <h3>Upload Image Folder</h3>
+                <div id="image-drop-zone" class="drop-zone">
+                    <p>Drag & Drop Images Here or Click to Browse</p>
+                    <input type="file" id="image-upload" multiple accept="image/*" webkitdirectory>
+                </div>
+            </div>
+
+            <div class="upload-box">
+                <h3>Upload Excel File</h3>
+                <div id="excel-drop-zone" class="drop-zone">
+                    <p>Drag & Drop Excel File Here or Click to Browse</p>
+                    <input type="file" id="excel-upload" accept=".xlsx,.xls,.csv">
+                </div>
+            </div>
+        </div>
+
+        <!-- Column Selection -->
+        <div id="column-selection" class="column-selection" style="display: none;">
+            <h3>Select Excel Columns</h3>
+            <div class="column-inputs">
+                <label>
+                    Image Name Column:
+                    <select id="image-name-column"></select>
+                </label>
+                <label>
+                    Style Code Column:
+                    <select id="style-code-column"></select>
+                </label>
+            </div>
+            <button id="process-files" class="btn">Process Files</button>
+        </div>
+
+        <!-- Image Groups Display -->
+        <div id="image-groups" class="image-groups"></div>
+
+        <!-- Download Section -->
+        <div id="download-section" class="download-section" style="display: none;">
+            <button id="download-images" class="btn">Download Images ZIP</button>
+            <button id="download-excel" class="btn">Download Updated Excel</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
